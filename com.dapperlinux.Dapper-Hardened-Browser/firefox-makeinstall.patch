@@ -1,0 +1,25 @@
+diff --git a/GNUmakefile b/GNUmakefile
+index 38656c8..6f6c941 100644
+--- a/GNUmakefile
++++ b/GNUmakefile
+@@ -11,4 +11,16 @@ build:
+ clean:
+ 	./mach clobber
+ 
+-.PHONY: all build clean
++install:
++	./mach install
++	desktop-file-install --dir $(prefix)/share/applications com.dapperlinux.Dapper-Hardened-Browser.desktop
++	mkdir -p $(prefix)/share/icons/hicolor/128x128/apps/ $(prefix)/share/appdata
++	#cp -p browser/branding/dapper/default16.png $(prefix)/share/icons/hicolor/16x16/apps/com.dapperlinux.Dapper-Hardened-Browser.png
++	cp -p com.dapperlinux.Dapper-Hardened-Browser.appdata.xml $(prefix)/share/appdata
++	cp -p browser/branding/dapper/mozicon128.png $(prefix)/share/icons/hicolor/128x128/apps/com.dapperlinux.Dapper-Hardened-Browser.png
++	cp -p autoconfig.js $(prefix)/lib/firefox-58.0/defaults/pref
++	cp -p mozilla.cfg $(prefix)/lib/firefox-58.0
++	mkdir -p $(prefix)/lib/firefox-58.0/distribution
++	cp -p distribution.ini $(prefix)/lib/firefox-58.0/distribution
++	mv addons $(prefix)/lib/firefox-58.0/distribution/extensions
++.PHONY: all build clean install
+-- 
+2.5.5
+
