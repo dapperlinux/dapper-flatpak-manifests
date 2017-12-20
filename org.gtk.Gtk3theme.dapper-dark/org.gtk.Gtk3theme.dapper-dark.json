@@ -1,0 +1,43 @@
+{
+  "id": "org.gtk.Gtk3theme.dapper-dark",
+  "branch": "3.22",
+  "runtime": "org.gnome.Sdk",
+  "build-extension": true,
+  "sdk": "org.gnome.Sdk",
+  "runtime-version": "3.24",
+  "appstream-compose": false,
+  "separate-locales": false,
+  "modules": [
+    {
+      "name": "dapper-dark",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -pm 755 /usr/share/runtime/share/themes/dapper-dark/gtk-3.0",
+        "cp gtk.css /usr/share/runtime/share/themes/dapper-dark/gtk-3.0",
+        "cp -r assets /usr/share/runtime/share/themes/dapper-dark/gtk-3.0"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "path": "dapper-dark.tar.xz"
+        }
+      ]
+    },
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p ${FLATPAK_DEST}/share/appdata",
+        "cp org.gtk.Gtk3theme.dapper-dark.appdata.xml ${FLATPAK_DEST}/share/appdata",
+        "appstream-compose --basename=org.gtk.Gtk3theme.dapper-dark --prefix=${FLATPAK_DEST} --origin=flatpak org.gtk.Gtk3theme.dapper-dark"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "org.gtk.Gtk3theme.dapper-dark.appdata.xml"
+        }
+      ]
+    }
+  ]
+}
+

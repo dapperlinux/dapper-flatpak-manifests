@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="runtime">
+  <id>org.gtk.Gtk3theme.Dapper-Dark</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Dapper-Dark GTK3 theme</name>
+  <summary>Dapper-Dark GTK3 theme</summary>
+  <description>
+    <p>A dark theme for GNOME/GTK3 based desktop environments</p>
+  </description>
+  <url type="homepage">https://github.com/dapperlinux/dapper-dark</url>
+</component>
