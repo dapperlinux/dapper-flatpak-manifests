@@ -26,8 +26,14 @@ $ flatpak build-export repo com.dapperlinux.Dapper-Hardened-Browser
 
 Then you can test the application with
 ```
-$ flatpak remote-add --no-gpg-key testrepo repo
+$ flatpak remote-add --no-gpg-verify testrepo repo
 $ flatpak install testrepo com.dapperlinux.Dapper-Hardened-Browser
+```
+
+Or if you want to use gpg, find your keyid, and then export with:
+```
+$ gpg2 -k
+$ flatpak build-export --gpg-sign=key-id repo com.dapperlinux.Dapper-Hardened-Browser
 ```
 
 Or export it to a gpg signed repository of your choosing, just add a gpg key parameter to the build-export command.
