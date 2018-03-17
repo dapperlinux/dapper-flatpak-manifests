@@ -21,7 +21,12 @@
         /* Enable playing sound thru pulseaudio */
         "--socket=pulseaudio",
         /* Enable access to dri */
-        "--device=dri"
+        "--device=dri",
+        /* Enable themes support */
+        "--filesystem=~/.config/dconf:ro",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        /* Required for file reveal in file manager */
+        "--socket=session-bus"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
@@ -89,8 +94,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://static.rust-lang.org/dist/rust-1.22.1-x86_64-unknown-linux-gnu.tar.gz",
-                    "sha256": "8cf4e840041fb05721673836997c5aac5673f733660927dfb64b8d653a3a94fa"
+                    "url": "https://static.rust-lang.org/dist/rust-1.24.1-x86_64-unknown-linux-gnu.tar.gz",
+                    "sha256": "4567e7f6e5e0be96e9a5a7f5149b5452828ab6a386099caca7931544f45d5327"
                 },
                 {
                     "type": "script",
