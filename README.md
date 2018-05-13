@@ -9,7 +9,7 @@ You can build flatpak packages for any manifest in this repo. It's all very stra
 
 Add the flathub remote:
 ```
-$ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+$ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 Install the gnome Sdk
