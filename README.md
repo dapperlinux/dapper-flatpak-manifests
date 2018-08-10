@@ -49,8 +49,7 @@ $ flatpak remote-add --if-not-exists dapperlinux --from https://download.dapperl
 
 Installing apps:
 ```
-$ flatpack install dapperlinux com.dapperlinux.Dapper-Hardened-Browser
-$ flatpack install dapperlinux org.mozilla.Firefox
-$ flatpack install dapperlinux org.gnome.Evolution
-$ flatpack install dapperlinux org.gnome.Music
+$ flatpak install dapperlinux com.dapperlinux.Dapper-Hardened-Browser
+$ flatpak install dapperlinux org.mozilla.Firefox
+$ flatpak install dapperlinux org.gtk.Gtk3theme.dapper-dark
 ```
