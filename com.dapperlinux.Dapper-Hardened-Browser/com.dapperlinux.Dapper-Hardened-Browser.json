@@ -95,8 +95,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://static.rust-lang.org/dist/rust-1.27.0-x86_64-unknown-linux-gnu.tar.gz",
-                    "sha256": "235ad78e220b10a2d0267aea1e2c0f19ef5eaaff53ad6ff8b12c1d4370dec9a3"
+                    "url": "https://static.rust-lang.org/dist/rust-1.28.0-x86_64-unknown-linux-gnu.tar.gz",
+                    "sha256": "2a1390340db1d24a9498036884e6b2748e9b4b057fc5219694e298bdaa37b810"
                 },
                 {
                     "type": "script",
@@ -134,11 +134,13 @@
               "STRIP": "/bin/true"
             }
           },
-          "config-opts": ["--without-system-nspr",
-                        "--without-system-nss",
-                        "--disable-documentation"],
-          "no-autogen": true,
-          "make-install-args": ["prefix=/app"],
+          "buildsystem": "simple",
+            "build-commands": [
+               "env CARGO_HOME=.cargo cargo install cbindgen",
+               "env PATH=/run/build/firefox/.cargo/bin:$PATH ./mach build -j4",
+               "env prefix=/app make install"
+            ],
+	  "make-install-args": ["prefix=/app"],
           "sources": [
               {
                   "type": "git",
@@ -193,6 +195,17 @@
 		  "type": "archive",
 		  "path": "extensions.tar.xz",
 		  "dest": "addons"
+              },
+              {
+                  "type": "file",
+                  "path": "cargo-config",
+                  "dest-filename": "config",
+                  "dest": ".cargo"
+              },
+              {
+                  "type": "dir",
+                  "path": "vendor",
+                  "dest": "vendor"
 	      }
           ]
       }

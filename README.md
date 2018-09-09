@@ -18,8 +18,15 @@ $ sudo flatpak install flathub org.gnome.Platform 3.28
 $ sudo flatpak install flathub org.gnome.Sdk 3.28
 ```
 
+Firefox has also introduced some new dependancies, and 'cargo-vendor' sorts these. We need to install the following for downloading cbindgen crate which Firefox needs.
+```
+$ sudo dnf install openssl-devel cmake cargo rust
+```
+
 Build an application, for example Dapper Hardened Browser:
 ```
+$ cd com.dapperlinux.Dapper-Hardened-Browser
+$ ./prepare_sources
 $ flatpak-builder com.dapperlinux.Dapper-Hardened-Browser com.dapperlinux.Dapper-Hardened-Browser.json
 $ flatpak build-export repo com.dapperlinux.Dapper-Hardened-Browser
 ```
