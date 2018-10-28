@@ -95,8 +95,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://static.rust-lang.org/dist/rust-1.28.0-x86_64-unknown-linux-gnu.tar.gz",
-                    "sha256": "2a1390340db1d24a9498036884e6b2748e9b4b057fc5219694e298bdaa37b810"
+                    "url": "https://static.rust-lang.org/dist/rust-1.30.0-x86_64-unknown-linux-gnu.tar.gz",
+                    "sha256": "f620e3125cc505c842150bd873c0603432b6cee984cdae8b226cf92c8aa1a80f"
                 },
                 {
                     "type": "script",
@@ -126,6 +126,25 @@
                 }
             ]
 
+      },
+      {
+          "name": "nodejs",
+          "cleanup": [
+              "/include",
+              "/share",
+              "/app/lib/node_modules/npm/changelogs",
+              "/app/lib/node_modules/npm/doc",
+              "/app/lib/node_modules/npm/html",
+              "/app/lib/node_modules/npm/man",
+              "/app/lib/node_modules/npm/scripts"
+          ],
+          "sources": [
+              {
+                  "type": "archive",
+                  "url": "https://nodejs.org/dist/v8.12.0/node-v8.12.0.tar.xz",
+                  "sha256": "5a9dff58016c18fb4bf902d963b124ff058a550ebcd9840c677757387bce419a"
+              }
+          ]
       },
       {
           "name": "firefox",
